@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes} from 'styled-components'
 
 const AppWrapper = styled.div`
   text-align: center;
@@ -6,11 +6,26 @@ const AppWrapper = styled.div`
   width: 60%;
 `;
 
+const rotated360 = keyframes`
+	from { 
+		transform : rotate(0deg);
+	}
+	to {
+		transform : rotate(360deg);
+	}
+`;
+
 const Header = styled.header`
   background: white;
   color: #000;
-  height: 150px;
+  animation: ${rotated360} 2s linear infinite;
+  height: 200px;
   padding: 20px;
   `;
 
-export { AppWrapper,Header };
+const Button = styled.button`
+  background: ${props => props.primary ? "blue" : "red"};
+  color: ${props => props.primary ? "white" : "yellow"};
+  `;
+
+export { AppWrapper,Header,Button };

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { AppWrapper,Header } from "./App.style";
+import { AppWrapper,Header,Button } from "./App.style";
 
 import { connect } from "react-redux";
 
@@ -22,9 +22,9 @@ class App extends Component {
         )}
 
         {fetching ? (
-          <button disabled>Fetching...</button>
+          <Button primary disabled>Fetching...</Button>
         ) : (
-          <button onClick={onRequestDog}>Request a Dog</button>
+          <Button primary onClick={onRequestDog}>Request a Dog</Button>
         )}
 
         {error && <p style={{ color: "red" }}>Uh oh - something went wrong!</p>}
